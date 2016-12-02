@@ -12,9 +12,10 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/bootstrap.css" rel="stylesheet">
-  <link href="css/font-awesome.min.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
-  <link rel="icon" type="image/jpg" href="img/logo.jpg"  />
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="icon" type="image/jpg" href="img/logo.jpg"  />
+
 
   </head>
   <body  background="img/fon.jpg">
@@ -46,6 +47,12 @@
         <li class="active">
           <a href="Contacte.html"> Contacte </a>
         </li>
+        <li>
+          <form class="form-search">
+          <input type="text" class="input-medium search-query">
+          <button type="submit" class="btn btn-primary mycolor">Caută</button>
+        </form>
+        </li>
       </ul>
       <br />
 <h3>Adresa de contact:</h3>
@@ -54,32 +61,38 @@
       <b>e-mail: </b>anastashya@gmail.com<br>
         <b>facebook:</b><a href="https://www.facebook.com/ana.bosh.7"> Ana Uzun <br></a>
 <hr />
-      <div class="container">
-        <form id="contact" action="" method="post">
-          <h3>Pentru sugestii așteptăm să ne contactați completînd formularul de mai jos</h3>
-          <h4>Ne vom strădui să vă răspundem în max 24 de ore!</h4>
-          <fieldset>
-            <input placeholder="Your name" type="text" tabindex="1" required autofocus>
-          </fieldset>
-          <fieldset>
-            <input placeholder="Your Email Address" type="email" tabindex="2" required>
-          </fieldset>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-6">
+      <form id="contact" action="" method="post">
+        <h3>Pentru sugestii așteptăm să ne contactați completînd formularul de mai jos</h3>
+        <h4>Ne vom strădui să vă răspundem în max 24 de ore!</h4>
+        <fieldset>
+          <input placeholder="Your name" type="text" tabindex="1" required autofocus>
+        </fieldset>
+        <fieldset>
+          <input placeholder="Your Email Address" type="email" tabindex="2" required>
+        </fieldset>
 
-          <fieldset>
-            <input placeholder="Your Web Site starts with http://" type="url" tabindex="3" required>
-          </fieldset>
-          <fieldset>
-            <textarea placeholder="Type your Message Here...." tabindex="4" required></textarea>
-          </fieldset>
-          <fieldset>
-            <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
-          </fieldset>
-        </form>
+        <fieldset>
+          <input placeholder="Your Web Site starts with http://" type="url" tabindex="3" required>
+        </fieldset>
+        <fieldset>
+          <textarea placeholder="Type your Message Here...." tabindex="4" required></textarea>
+        </fieldset>
+        <fieldset>
+          <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+        </fieldset>
+      </form>
+		</div>
+		<div class="col-md-6">
+      <h3>
+      Pentru a trimite mesajul vă rog să plasați scrisoarea  în cutia poștală și să apăsațibutonul <b>Submit</b>
+    </h3>
 
-
-      </div>
-
-
+		</div>
+	</div>
+</div>
 
 <hr />
 

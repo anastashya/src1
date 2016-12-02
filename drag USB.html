@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)http://ljouanneau.com/lab/html5/demodragdrop.html -->
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<title>HTML5 Drag and drop demonstration</title>
+
+<style type="text/css">
+#cutie  {
+  float:left;  padding:10px; margin:10px;
+}
+
+#cutie { background: "img/cutie.jpg" }
+
+
+#plic{
+  width:50px; height:50px; padding:5px; margin:5px;
+  -moz-user-select:none;
+}
+
+</style>
+<script type="text/javascript">
+function dragStart(ev) {
+    ev.dataTransfer.effectAllowed='move';
+    //ev.dataTransfer.dropEffect='move';
+    ev.dataTransfer.setData("Text", ev.target.getAttribute('id'));
+    ev.dataTransfer.setDragImage(ev.target,0,0);
+    return true;
+}
+
+function dragEnter(ev) {
+    var idelt = ev.dataTransfer.getData("Text");
+    return true;
+}
+
+function dragOver(ev) {
+    var idelt = ev.dataTransfer.getData("Text");
+    var id = ev.target.getAttribute('id');
+    if( (id =='boxB' || id =='boxA') && (idelt == 'drag' || idelt=='drag2'|| idelt=='drag5'))
+        return false;
+    else if( id =='boxC' || id =='boxA'&& idelt == 'drag3'|| idelt=='drag4'|| idelt=='drag6')
+        return false;
+    else
+        return true;
+}
+
+
+function dragEnd(ev) {
+    ev.dataTransfer.clearData("Text");
+    return true
+}
+
+
+function dragDrop(ev) {
+    var idelt = ev.dataTransfer.getData("Text");
+    ev.target.appendChild(document.getElementById(idelt));
+    ev.stopPropagation();
+    return false; // return false so the event will not be propagated to the browser
+}
+
+
+</script>
+
+</head>
+
+<body>
+
+<h1>Drag and drop demo in a HTML document, using the HTML5 drag and drop API</h1>
+
+ <div> The red box and the orange box can be dragged and dropped between
+    the blue and the green boxes.
+    The purple box can be dragged and dropped only to the yellow box.
+    </div>
+
+<div id="cutie" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)">
+
+
+<div id="plic" draggable="true" ondragstart="return dragStart(event)" ondragend="return dragEnd(event)">plic</div>
+
+
+<div id="drag2" draggable="true" ondragstart="return dragStart(event)" ondragend="return dragEnd(event)">cartof</div>
+
+
+<div id="drag3" draggable="true" ondragstart="return dragStart(event)" ondragend="return dragEnd(event)">mar</div>
+
+<div id="drag4" draggable="true" ondragstart="return dragStart(event)" ondragend="return dragEnd(event)">cirese</div>
+
+
+<div id="drag5" draggable="true" ondragstart="return dragStart(event)" ondragend="return dragEnd(event)">morcov</div>
+
+
+<div id="drag6" draggable="true" ondragstart="return dragStart(event)" ondragend="return dragEnd(event)">piersic</div>
+
+
+</div>
+
+
+<div id="boxB" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)">legume
+
+</div>
+
+
+<div id="boxC" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)">
+ <b>fructe
+   </div>
+
+<div style="clear:both">Example created by <a href="http://ljouanneau.com/blog/">Laurent Jouanneau</a>.
+</div>
+
+
+</body>
+</html>
